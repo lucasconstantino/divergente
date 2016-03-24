@@ -87,6 +87,10 @@ function divergente_kw_manifests_info() {
     'callback' => 'divergente_manifest_theme',
   );
 
+  $manifests['time_and_location'] = array(
+    'callback' => 'divergente_manifest_time_and_location',
+  );
+
   $manifests['configuration'] = array(
     'callback' => 'divergente_manifest_import_configurations',
   );
@@ -109,6 +113,15 @@ function divergente_manifest_theme() {
       theme_enable(array($theme));
     }
   }
+}
+
+/**
+ * Setup time and location.
+ */
+function divergente_manifest_time_and_location() {
+  variable_set('site_default_country', 'BR');
+  variable_set('date_default_timezone', 'America/Sao_Paulo');
+  variable_set('configurable_timezones', 0);
 }
 
 /**
