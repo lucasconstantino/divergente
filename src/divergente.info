@@ -5,6 +5,7 @@ core = 7.x
 ; Drupal core
 dependencies[] = block
 dependencies[] = dblog
+dependencies[] = taxonomy
 
 ; Kraftwagen
 dependencies[] = kw_manifests
@@ -21,6 +22,7 @@ dependencies[] = token
 dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = date
+dependencies[] = link
 
 ; SEO & Metadata
 dependencies[] = transliteration

@@ -45,6 +45,7 @@ projects[token][version] = 1.5
 projects[entity][version] = 1.2
 projects[entityreference][version] = 1.1
 projects[date][version] = 2.9
+projects[link][version] = 1.4
 
 
 ; =====================
