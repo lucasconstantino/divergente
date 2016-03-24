@@ -9,6 +9,9 @@ modules/kraftwagen/*
 # ignore themes in contrib
 themes/contrib/*
 
+# ignore configuration tracking file
+cnf/config/tracked.inc
+
 # OS specific shit
 .DS_Store
 Thumbs.db
