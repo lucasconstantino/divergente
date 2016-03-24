@@ -2,11 +2,25 @@ name = divergente
 description = Install site for divergente
 core = 7.x
 
+; Drupal core
 dependencies[] = block
 dependencies[] = dblog
 
+; Kraftwagen
 dependencies[] = kw_manifests
+
+; Configuration
 dependencies[] = features
+
+; Miscellaneous
+dependencies[] = entity
+dependencies[] = token
+dependencies[] = ctools
+dependencies[] = transliteration
+dependencies[] = pathauto
+
+; Administrative
+dependencies[] = admin_menu
 
 env_dependencies[development][] = field_ui
 env_dependencies[development][] = strongarm

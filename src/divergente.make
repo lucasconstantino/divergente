@@ -20,6 +20,13 @@ projects[kw_itemnames][subdir] = kraftwagen
 
 
 ; =====================
+; Configuration
+; =====================
+
+projects[features][version] = 2.8
+
+
+; =====================
 ; Miscellaneous
 ; =====================
 
@@ -31,7 +38,8 @@ projects[pathauto][version] = 1.2
 
 
 ; =====================
-; Themes
+; Administrative
 ; =====================
 
+projects[admin_menu][version] = 3.0-rc5
 projects[adminimal_theme][version] = 1.24
