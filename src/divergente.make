@@ -43,4 +43,5 @@ projects[pathauto][version] = 1.2
 ; =====================
 
 projects[admin_menu][version] = 3.0-rc5
+projects[admin_menu][patch][] = https://www.drupal.org/files/issues/admin_menu-font-size-option-841516-10.patch
 projects[adminimal_theme][version] = 1.24
