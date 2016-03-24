@@ -115,6 +115,7 @@ function divergente_manifest_theme() {
  * Sync configuration.
  */
 function divergente_manifest_import_configurations() {
+  variable_set('configuration_config_path', 'profiles/divergente/cnf/config');
   module_load_include('inc', 'configuration');
   _configuration_left_sync();
 }

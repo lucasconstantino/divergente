@@ -11,7 +11,6 @@ dependencies[] = kw_manifests
 
 ; Configuration
 dependencies[] = features
-dependencies[] = strongarm
 dependencies[] = configuration
 
 ; Miscellaneous
@@ -24,7 +23,9 @@ dependencies[] = pathauto
 ; Administrative
 dependencies[] = admin_menu
 
+; Development
 env_dependencies[development][] = field_ui
 env_dependencies[development][] = strongarm
+env_dependencies[development][] = configuration_ui
 
 files[] = divergente.profile

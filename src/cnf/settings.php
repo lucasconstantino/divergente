@@ -8,5 +8,3 @@ ini_set('session.gc_probability', 1);
 ini_set('session.gc_divisor', 100);
 ini_set('session.gc_maxlifetime', 200000);
 ini_set('session.cookie_lifetime', 2000000);
-
-$conf['configuration_config_path'] = 'profiles/divergente/cnf/config';
