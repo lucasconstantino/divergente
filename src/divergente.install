@@ -63,6 +63,11 @@ function divergente_manifest_vocabularies() {
       'name' => 'Fontes',
       'description' => 'Vocabulário de fontes de notícia',
     ),
+
+    'topics' => array(
+      'name' => 'Tópicos',
+      'description' => 'Tópico é o conjunto de notícias.',
+    ),
   );
 
   foreach ($vocabularies as $name => $vocabulary) {
