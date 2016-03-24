@@ -87,6 +87,10 @@ function divergente_kw_manifests_info() {
     'callback' => 'divergente_manifest_theme',
   );
 
+  $manifests['configuration'] = array(
+    'callback' => 'divergente_manifest_import_configurations',
+  );
+
   return $manifests;
 }
 
@@ -105,4 +109,12 @@ function divergente_manifest_theme() {
       theme_enable(array($theme));
     }
   }
+}
+
+/**
+ * Sync configuration.
+ */
+function divergente_manifest_import_configurations() {
+  module_load_include('inc', 'configuration');
+  _configuration_left_sync();
 }
