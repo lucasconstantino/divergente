@@ -1,0 +1,13 @@
+[solr]
+divergente_solr ansible_ssh_host=localhost ansible_ssh_port=2223
+
+[database]
+divergente ansible_ssh_host=localhost ansible_ssh_port=2222
+
+[drupal]
+divergente ansible_ssh_host=localhost ansible_ssh_port=2222
+
+[docker:children]
+solr
+database
+drupal
