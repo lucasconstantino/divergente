@@ -10,7 +10,7 @@ function divergente_install() {
   $default_theme = 'basic';
   theme_enable($default_theme);
   variable_set('theme_default', $default_theme);
-  
+
   $values = array(
     array(
       'module' => 'system',
@@ -75,4 +75,34 @@ function divergente_install() {
   // Enable default permissions for system roles.
   user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content'));
+}
+
+/**
+ * Implements hook_kw_manifests_info().
+ */
+function divergente_kw_manifests_info() {
+  $manifests = array();
+
+  $manifests['themes'] = array(
+    'callback' => 'divergente_manifest_theme',
+  );
+
+  return $manifests;
+}
+
+/**
+ * Setup default themes.
+ */
+function divergente_manifest_theme() {
+  variable_set('theme_default', DIVERGENTE_THEME_DEFAULT);
+  variable_set('admin_theme', DIVERGENTE_THEME_ADMINISTRATIVE);
+
+  $theme_to_enable = array(DIVERGENTE_THEME_ADMINISTRATIVE, DIVERGENTE_THEME_DEFAULT);
+  $themes_info = list_themes(true);
+
+  foreach ($theme_to_enable as $theme) {
+    if (empty($themes_info[$theme]->status)) {
+      theme_enable(array($theme));
+    }
+  }
 }
