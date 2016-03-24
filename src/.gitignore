@@ -11,6 +11,8 @@ themes/contrib/*
 
 # ignore configuration tracking file
 cnf/config/tracked.inc
+cnf/config/permission*
+cnf/config/vocabulary*
 
 # OS specific shit
 .DS_Store
