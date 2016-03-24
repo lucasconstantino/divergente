@@ -12,6 +12,7 @@ dependencies[] = kw_manifests
 ; Configuration
 dependencies[] = features
 dependencies[] = strongarm
+dependencies[] = configuration
 
 ; Miscellaneous
 dependencies[] = entity
