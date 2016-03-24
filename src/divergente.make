@@ -27,6 +27,7 @@ projects[features][version] = 2.8
 projects[strongarm][version] = 2.0
 projects[configuration][version] = 2.x-dev
 projects[configuration][patch][] = https://www.drupal.org/files/issues/drush-left-sync-2460397-6.patch
+projects[xautoload][version] = 5.6
 
 
 ; =====================
