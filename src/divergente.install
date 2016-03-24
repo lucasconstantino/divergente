@@ -1,6 +1,86 @@
 <?php
 
 /**
+ * Implements hook_kw_manifests_info().
+ */
+function divergente_kw_manifests_info() {
+  $manifests = array();
+
+  $manifests['themes'] = array(
+    'callback' => 'divergente_manifest_theme',
+  );
+
+  $manifests['time_and_location'] = array(
+    'callback' => 'divergente_manifest_time_and_location',
+  );
+
+  $manifests['vocabularies'] = array(
+    'callback' => 'divergente_manifest_vocabularies',
+  );
+
+  $manifests['configuration'] = array(
+    'callback' => 'divergente_manifest_import_configurations',
+    'dependencies' => array(
+      array('module' => 'divergente', 'name' => 'vocabularies'),
+    ),
+  );
+
+  return $manifests;
+}
+
+/**
+ * Setup default themes.
+ */
+function divergente_manifest_theme() {
+  variable_set('theme_default', DIVERGENTE_THEME_DEFAULT);
+  variable_set('admin_theme', DIVERGENTE_THEME_ADMINISTRATIVE);
+
+  $theme_to_enable = array(DIVERGENTE_THEME_ADMINISTRATIVE, DIVERGENTE_THEME_DEFAULT);
+  $themes_info = list_themes(true);
+
+  foreach ($theme_to_enable as $theme) {
+    if (empty($themes_info[$theme]->status)) {
+      theme_enable(array($theme));
+    }
+  }
+}
+
+/**
+ * Setup time and location.
+ */
+function divergente_manifest_time_and_location() {
+  variable_set('site_default_country', 'BR');
+  variable_set('date_default_timezone', 'America/Sao_Paulo');
+  variable_set('configurable_timezones', 0);
+}
+
+/**
+ * Create default vocabularies.
+ */
+function divergente_manifest_vocabularies() {
+  $vocabularies = array(
+    'sources' => array(
+      'name' => 'Fontes',
+      'description' => 'Vocabulário de fontes de notícia',
+    ),
+  );
+
+  foreach ($vocabularies as $name => $vocabulary) {
+    $vocabulary['machine_name'] = $name;
+    kw_itemnames_ensure('taxonomy_vocabulary', $name, $vocabulary, array());
+  }
+}
+
+/**
+ * Sync configuration.
+ */
+function divergente_manifest_import_configurations() {
+  variable_set('configuration_config_path', 'profiles/divergente/cnf/config');
+  module_load_include('inc', 'configuration');
+  _configuration_left_sync();
+}
+
+/**
  * Implements hook_install().
  *
  * Perform actions to set up the site for this profile.
@@ -75,60 +155,4 @@ function divergente_install() {
   // Enable default permissions for system roles.
   user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content'));
-}
-
-/**
- * Implements hook_kw_manifests_info().
- */
-function divergente_kw_manifests_info() {
-  $manifests = array();
-
-  $manifests['themes'] = array(
-    'callback' => 'divergente_manifest_theme',
-  );
-
-  $manifests['time_and_location'] = array(
-    'callback' => 'divergente_manifest_time_and_location',
-  );
-
-  $manifests['configuration'] = array(
-    'callback' => 'divergente_manifest_import_configurations',
-  );
-
-  return $manifests;
-}
-
-/**
- * Setup default themes.
- */
-function divergente_manifest_theme() {
-  variable_set('theme_default', DIVERGENTE_THEME_DEFAULT);
-  variable_set('admin_theme', DIVERGENTE_THEME_ADMINISTRATIVE);
-
-  $theme_to_enable = array(DIVERGENTE_THEME_ADMINISTRATIVE, DIVERGENTE_THEME_DEFAULT);
-  $themes_info = list_themes(true);
-
-  foreach ($theme_to_enable as $theme) {
-    if (empty($themes_info[$theme]->status)) {
-      theme_enable(array($theme));
-    }
-  }
-}
-
-/**
- * Setup time and location.
- */
-function divergente_manifest_time_and_location() {
-  variable_set('site_default_country', 'BR');
-  variable_set('date_default_timezone', 'America/Sao_Paulo');
-  variable_set('configurable_timezones', 0);
-}
-
-/**
- * Sync configuration.
- */
-function divergente_manifest_import_configurations() {
-  variable_set('configuration_config_path', 'profiles/divergente/cnf/config');
-  module_load_include('inc', 'configuration');
-  _configuration_left_sync();
 }

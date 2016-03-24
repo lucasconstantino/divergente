@@ -10,6 +10,8 @@ dependencies[] = image
 
 ; Kraftwagen
 dependencies[] = kw_manifests
+dependencies[] = kw_itemnames
+dependencies[] = kw_itemnames_entity
 
 ; Configuration
 dependencies[] = features
