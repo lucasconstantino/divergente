@@ -34,11 +34,24 @@ projects[xautoload][version] = 5.6
 ; Miscellaneous
 ; =====================
 
-projects[entity][version] = 1.2
-projects[token][version] = 1.5
 projects[ctools][version] = 1.3
-projects[transliteration][version] = 3.1
+projects[token][version] = 1.5
+
+
+; =====================
+; Content
+; =====================
+
+projects[entity][version] = 1.2
+projects[entityreference][version] = 1.1
+
+
+; =====================
+; SEO & Metadata
+; =====================
+
 projects[pathauto][version] = 1.2
+projects[transliteration][version] = 3.1
 
 
 ; =====================

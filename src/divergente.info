@@ -14,9 +14,14 @@ dependencies[] = features
 dependencies[] = configuration
 
 ; Miscellaneous
-dependencies[] = entity
-dependencies[] = token
 dependencies[] = ctools
+dependencies[] = token
+
+; Content
+dependencies[] = entity
+dependencies[] = entityreference
+
+; SEO & Metadata
 dependencies[] = transliteration
 dependencies[] = pathauto
 
