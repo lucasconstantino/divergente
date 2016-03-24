@@ -6,6 +6,7 @@ core = 7.x
 dependencies[] = block
 dependencies[] = dblog
 dependencies[] = taxonomy
+dependencies[] = image
 
 ; Kraftwagen
 dependencies[] = kw_manifests
