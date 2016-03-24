@@ -24,6 +24,7 @@ projects[kw_itemnames][subdir] = kraftwagen
 ; =====================
 
 projects[features][version] = 2.8
+projects[strongarm][version] = 2.0
 
 
 ; =====================
