@@ -20,6 +20,7 @@ dependencies[] = token
 ; Content
 dependencies[] = entity
 dependencies[] = entityreference
+dependencies[] = date
 
 ; SEO & Metadata
 dependencies[] = transliteration
