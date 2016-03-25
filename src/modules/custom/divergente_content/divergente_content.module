@@ -3,3 +3,100 @@
  * @file
  * Code for the Divergente - Content module.
  */
+
+ /**
+  * Implements hook_form_FORM_ID_alter(&$form).
+  */
+ function divergente_content_form_news_node_form_alter(&$form) {
+   $form['title']['#required'] = FALSE;
+ }
+
+ /**
+  * Implements hook_node_presave($node).
+  */
+function divergente_content_node_presave($node) {
+  $url = field_get_items('node', $node, 'field_url');
+  $url = !empty($url[0]['url']) ? $url[0]['url'] : NULL;
+  if (!empty($url)) {
+    $data = divergente_content_get_data($url);
+
+    // Perform necessary validation.
+    if(empty($data['title'])){
+      throw new Exception('Error saving node: Title cannot be empty');
+    }
+
+    // Import title.
+    $node->title = $data['title'];
+
+    // Import description.
+    if (!empty($data['description'])) {
+      $node->field_description[LANGUAGE_NONE][0]['value'] = $data['description'];
+    }
+
+    // Import image.
+    if (!empty($data['image'])) {
+      $download = TRUE;
+      $image_filename = basename($data['image']);
+
+      // Make sure we are not downloading the same image again.
+      if (!empty($node->field_image[LANGUAGE_NONE][0]['fid'])) {
+        $current_image = file_load($node->field_image[LANGUAGE_NONE][0]['fid']);
+        $download = $current_image->filename !== $image_filename;
+      }
+
+      if ($download) {
+        $file = system_retrieve_file($data['image'], 'public://' . $image_filename, TRUE);
+        $node->field_image[LANGUAGE_NONE][0] = (array) $file;
+      }
+    }
+
+    // Load source, if any.
+    if (!empty($data['source']['url']) && empty($node->field_source[LANGUAGE_NONE][0]['tid'])) {
+      $sources_vocabulary = taxonomy_vocabulary_machine_name_load('sources');
+      $query = new EntityFieldQuery();
+      $result = $query->entityCondition('entity_type', 'taxonomy_term')
+         ->propertyCondition('vid', $sources_vocabulary->vid)
+         ->fieldCondition('field_url', 'url', $data['source']['url'])
+         ->propertyOrderBy('weight')
+         ->execute();
+
+      $source = !empty($result['taxonomy_term']) ? array_shift($result['taxonomy_term']) : NULL;
+
+      // Create a new source when none is available.
+      if (empty($source)) {
+        $source = new stdClass();
+        $source->name = $data['source']['site_name'];
+        $source->vid = $sources_vocabulary->vid;
+        $source->field_url[LANGUAGE_NONE][0]['url'] = $data['source']['url'];
+        taxonomy_term_save($source);
+      }
+
+      $node->field_source[LANGUAGE_NONE][0]['tid'] = $source->tid;
+    }
+  }
+}
+
+/**
+ * Helper method to get necessary data from an url.
+ */
+function divergente_content_get_data($url) {
+  libraries_load('OpenGraph');
+  $graph = OpenGraph::fetch($url);
+  $data = array();
+
+  // Save found data.
+  foreach ($graph as $key => $value) {
+    $data[$key] = $value;
+  }
+
+  $parsedUrl = parse_url($url);
+  $sourceUrl = $parsedUrl['scheme'] . '://' . $parsedUrl['host'] . '/';
+
+  if ($sourceUrl !== $url) {
+    $data['source'] = divergente_content_get_data($sourceUrl);
+  }
+
+  // @TODO: grab data other then OpenGraph when needed.
+
+  return $data;
+}
