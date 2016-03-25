@@ -6,6 +6,9 @@ modules/contrib/*
 modules/kraftwagen/*
 !modules/kraftwagen/README.md
 
+# ignore libraries
+libraries/*
+
 # ignore themes in contrib
 themes/contrib/*
 

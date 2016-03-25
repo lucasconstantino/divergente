@@ -36,6 +36,7 @@ projects[xautoload][version] = 5.6
 
 projects[ctools][version] = 1.3
 projects[token][version] = 1.5
+projects[libraries][version] = 2.2
 
 
 ; =====================
@@ -63,3 +64,12 @@ projects[transliteration][version] = 3.1
 projects[admin_menu][version] = 3.0-rc5
 projects[admin_menu][patch][] = https://www.drupal.org/files/issues/admin_menu-font-size-option-841516-10.patch
 projects[adminimal_theme][version] = 1.24
+
+
+; =====================
+; Libraries
+; =====================
+
+libraries[opengraph][download][type] = git
+libraries[opengraph][download][url] = https://github.com/scottmac/opengraph.git
+libraries[opengraph][download][revision] = faba415deb9a84ae534dce78afdd5ca6535bdf12
