@@ -35,6 +35,9 @@ dependencies[] = pathauto
 ; Administrative
 dependencies[] = admin_menu
 
+; Custom
+dependencies[] = divergente_content
+
 ; Development
 env_dependencies[development][] = field_ui
 env_dependencies[development][] = strongarm
