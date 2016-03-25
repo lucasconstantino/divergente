@@ -36,6 +36,7 @@ dependencies[] = pathauto
 
 ; Administrative
 dependencies[] = admin_menu
+dependencies[] = adminimal_admin_menu
 
 ; Custom
 dependencies[] = divergente_content
