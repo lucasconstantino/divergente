@@ -21,6 +21,7 @@ dependencies[] = configuration
 dependencies[] = ctools
 dependencies[] = token
 dependencies[] = libraries
+dependencies[] = views
 
 ; Content
 dependencies[] = entity
