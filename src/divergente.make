@@ -81,4 +81,4 @@ projects[search_krumo][version] = 1.6
 
 libraries[OpenGraph][download][type] = git
 libraries[OpenGraph][download][url] = https://github.com/scottmac/opengraph.git
-libraries[OpenGraph][download][revision] = faba415deb9a84ae534dce78afdd5ca6535bdf12
+libraries[OpenGraph][download][revision] = 062c75dd8265bbe57261a4154ead54fd782d4035
