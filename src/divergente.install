@@ -43,6 +43,8 @@ function divergente_manifest_theme() {
       theme_enable(array($theme));
     }
   }
+
+  variable_set('node_admin_theme', TRUE);
 }
 
 /**

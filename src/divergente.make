@@ -70,6 +70,6 @@ projects[adminimal_theme][version] = 1.24
 ; Libraries
 ; =====================
 
-libraries[opengraph][download][type] = git
-libraries[opengraph][download][url] = https://github.com/scottmac/opengraph.git
-libraries[opengraph][download][revision] = faba415deb9a84ae534dce78afdd5ca6535bdf12
+libraries[OpenGraph][download][type] = git
+libraries[OpenGraph][download][url] = https://github.com/scottmac/opengraph.git
+libraries[OpenGraph][download][revision] = faba415deb9a84ae534dce78afdd5ca6535bdf12

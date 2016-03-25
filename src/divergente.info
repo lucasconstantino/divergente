@@ -20,6 +20,7 @@ dependencies[] = configuration
 ; Miscellaneous
 dependencies[] = ctools
 dependencies[] = token
+dependencies[] = libraries
 
 ; Content
 dependencies[] = entity
