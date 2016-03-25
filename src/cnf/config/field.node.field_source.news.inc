@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * field.node.field_topic.news.inc
+ * field.node.field_source.news.inc
  */
 
 $api = '2.0.0';
@@ -9,7 +9,7 @@ $api = '2.0.0';
 $data = array(
   'field_config' => array(
     'active' => '1',
-    'cardinality' => '-1',
+    'cardinality' => '1',
     'columns' => array(
       'tid' => array(
         'not null' => FALSE,
@@ -19,7 +19,7 @@ $data = array(
     ),
     'deleted' => '0',
     'entity_types' => array(),
-    'field_name' => 'field_topic',
+    'field_name' => 'field_source',
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -39,7 +39,7 @@ $data = array(
       'allowed_values' => array(
         0 => array(
           'parent' => '0',
-          'vocabulary' => 'topics',
+          'vocabulary' => 'sources',
         ),
       ),
     ),
@@ -48,13 +48,13 @@ $data = array(
       'details' => array(
         'sql' => array(
           'FIELD_LOAD_CURRENT' => array(
-            'field_data_field_topic' => array(
-              'tid' => 'field_topic_tid',
+            'field_data_field_source' => array(
+              'tid' => 'field_source_tid',
             ),
           ),
           'FIELD_LOAD_REVISION' => array(
-            'field_revision_field_topic' => array(
-              'tid' => 'field_topic_tid',
+            'field_revision_field_source' => array(
+              'tid' => 'field_source_tid',
             ),
           ),
         ),
@@ -70,14 +70,14 @@ $data = array(
     'bundle' => 'news',
     'default_value' => NULL,
     'deleted' => '0',
-    'description' => 'Tópicos a que essa notícia pertence.',
+    'description' => 'Fonte da notícia.',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -87,8 +87,8 @@ $data = array(
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_topic',
-    'label' => 'Topic',
+    'field_name' => 'field_source',
+    'label' => 'Fonte',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -101,14 +101,14 @@ $data = array(
         'size' => 60,
       ),
       'type' => 'options_select',
-      'weight' => '6',
+      'weight' => '7',
     ),
   ),
 );
 
 $dependencies = array(
   'content_type.news' => 'content_type.news',
-  'vocabulary.topics' => 'vocabulary.topics',
+  'vocabulary.sources' => 'vocabulary.sources',
 );
 
 $optional = array();

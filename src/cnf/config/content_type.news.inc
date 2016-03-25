@@ -21,6 +21,7 @@ $dependencies = array();
 $optional = array(
   'field.node.field_description.news' => 'field.node.field_description.news',
   'field.node.field_image.news' => 'field.node.field_image.news',
+  'field.node.field_source.news' => 'field.node.field_source.news',
   'field.node.field_topic.news' => 'field.node.field_topic.news',
   'field.node.field_url.news' => 'field.node.field_url.news',
   'permission.create_news_content' => 'permission.create_news_content',
