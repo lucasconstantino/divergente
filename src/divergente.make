@@ -60,6 +60,13 @@ projects[transliteration][version] = 3.1
 
 
 ; =====================
+; UI
+; =====================
+
+projects[aurora][version] = 3.6
+
+
+; =====================
 ; Administrative
 ; =====================
 

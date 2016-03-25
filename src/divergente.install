@@ -35,7 +35,7 @@ function divergente_manifest_theme() {
   variable_set('theme_default', DIVERGENTE_THEME_DEFAULT);
   variable_set('admin_theme', DIVERGENTE_THEME_ADMINISTRATIVE);
 
-  $theme_to_enable = array(DIVERGENTE_THEME_ADMINISTRATIVE, DIVERGENTE_THEME_DEFAULT);
+  $theme_to_enable = array('aurora', DIVERGENTE_THEME_ADMINISTRATIVE, DIVERGENTE_THEME_DEFAULT);
   $themes_info = list_themes(true);
 
   foreach ($theme_to_enable as $theme) {

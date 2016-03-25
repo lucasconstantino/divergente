@@ -1,9 +1,7 @@
 name = Neutral
 description = Default theme for divergente
-
-engine = phptemplate
-
 core = 7.x
-php = 5.2
+base theme = aurora
+engine = phptemplate
 
 stylesheets[all][] = layout.css
