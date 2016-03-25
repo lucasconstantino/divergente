@@ -67,6 +67,15 @@ projects[adminimal_theme][version] = 1.24
 
 
 ; =====================
+; Development
+; =====================
+
+projects[devel][version] = 1.5
+projects[devel_debug_log][version] = 1.2
+projects[search_krumo][version] = 1.6
+
+
+; =====================
 ; Libraries
 ; =====================
 

@@ -42,5 +42,8 @@ dependencies[] = divergente_content
 env_dependencies[development][] = field_ui
 env_dependencies[development][] = strongarm
 env_dependencies[development][] = configuration_ui
+env_dependencies[development][] = devel
+env_dependencies[development][] = devel_debug_log
+env_dependencies[development][] = search_krumo
 
 files[] = divergente.profile
