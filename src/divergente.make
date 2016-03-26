@@ -38,6 +38,7 @@ projects[ctools][version] = 1.3
 projects[token][version] = 1.5
 projects[libraries][version] = 2.2
 projects[views][version] = 3.13
+projects[context][version] = 3.6
 projects[jquery_update][version] = 2.7
 
 

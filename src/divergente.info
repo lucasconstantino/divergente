@@ -22,6 +22,7 @@ dependencies[] = ctools
 dependencies[] = token
 dependencies[] = libraries
 dependencies[] = views
+dependencies[] = context
 dependencies[] = jquery_update
 
 ; Content
