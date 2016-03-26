@@ -65,12 +65,20 @@
  * @see template_preprocess_page()
  * @see template_process()
  */
+
+$contextual_tabs = empty($tabs) ? NULL : render($tabs);
 ?>
 
 <?php if ($page['header']): ?>
   <header id="header" role="banner">
     <?php print render($page['header']); ?>
   </header>
+<?php endif; ?>
+
+<?php if(!empty($contextual_tabs)): ?>
+  <div class="contextual-tabs">
+    <?php print $contextual_tabs; ?>
+  </div>
 <?php endif; ?>
 
 <?php if ($page['main_prefix']): ?>
