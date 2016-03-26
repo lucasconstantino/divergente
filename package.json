@@ -22,9 +22,12 @@
   "homepage": "https://github.com/lucasconstantino/divergente#readme",
   "devDependencies": {
     "bower": "^1.7.7",
+    "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-sass": "^2.2.0",
+    "node-sass-asset-functions": "0.0.9",
+    "node-sass-globbing": "0.0.23",
     "require-dir": "^0.3.0"
   }
 }
