@@ -13,5 +13,9 @@
     "src/themes/neutral/assets/lib",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "bootswatch": "^3.3.6+1"
+  }
 }
