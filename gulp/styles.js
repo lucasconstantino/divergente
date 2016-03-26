@@ -18,6 +18,7 @@ gulp.task('styles', ['clean:styles'], function () {
         http_images_path: '/' + path.relative('build', assets) + '/images'
       }),
       includePaths: [
+        assets + '/lib',
         assets + '/sass/library',
         assets + '/sass/partials'
       ],
@@ -28,7 +29,7 @@ gulp.task('styles', ['clean:styles'], function () {
       browsers: ['last 2 versions', 'ie 9', 'ie 10', 'ie 11'],
       cascade: false
     }))
-    .pipe(gulp.dest(config.theme.path + '/css'));
+    .pipe(gulp.dest(assets + '/css'));
 });
 
 gulp.task('clean:styles', function () {
