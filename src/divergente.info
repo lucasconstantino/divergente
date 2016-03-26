@@ -48,5 +48,6 @@ env_dependencies[development][] = configuration_ui
 env_dependencies[development][] = devel
 env_dependencies[development][] = devel_debug_log
 env_dependencies[development][] = search_krumo
+env_dependencies[development][] = views_ui
 
 files[] = divergente.profile
