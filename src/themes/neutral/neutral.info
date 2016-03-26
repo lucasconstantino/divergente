@@ -5,3 +5,4 @@ base theme = aurora
 engine = phptemplate
 
 stylesheets[all][] = layout.css
+stylesheets[all][] = assets/css/main.css

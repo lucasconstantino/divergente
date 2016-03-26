@@ -1,0 +1,5 @@
+# ignore compiled assets.
+assets/css
+
+# ignore libraries.
+assets/lib
