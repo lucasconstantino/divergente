@@ -7,7 +7,11 @@ divergente ansible_ssh_host=localhost ansible_ssh_port=2222
 [drupal]
 divergente ansible_ssh_host=localhost ansible_ssh_port=2222
 
+[nodejs]
+divergente ansible_ssh_host=localhost ansible_ssh_port=2222
+
 [docker:children]
-solr
+;solr
 database
 drupal
+nodejs
