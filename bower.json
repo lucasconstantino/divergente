@@ -1,0 +1,17 @@
+{
+  "name": "divergente",
+  "description": "Portal divergente.",
+  "main": "index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/lucasconstantino/divergente",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/themes/neutral/assets/lib",
+    "test",
+    "tests"
+  ]
+}
