@@ -1,5 +1,7 @@
 # Drupal Boot (druboot)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/lucasconstantino/divergente.svg)](https://greenkeeper.io/)
+
 ## Search and replace:
 
 ```
